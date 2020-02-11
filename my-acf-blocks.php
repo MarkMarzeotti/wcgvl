@@ -34,3 +34,16 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'MY_ACF_BLOCKS_VERSION', '1.0.0' );
+
+/**
+ * Check to make sure ACF Pro is active.
+ */
+function mab_check_dependencies() {
+	if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
+		$class   = 'notice notice-error';
+		$message = __( 'This plugin "My ACF Blocks" relies on Advanced Custom Fields Pro. Please install and activate ACF Pro.', 'my-acf-blocks' );
+
+		printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
+	}
+}
+add_action( 'admin_notices', 'mab_check_dependencies' );
