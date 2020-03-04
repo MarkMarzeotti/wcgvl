@@ -1,0 +1,30 @@
+.testimonial {
+    margin-bottom: 1em;
+}
+
+.testimonial .testimonial-by {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.testimonial .testimonial-image {
+    margin-right: 1em;
+    width: 2em;
+}
+
+.testimonial .testimonial-image img {
+    border-radius: 1em;
+}
+
+.testimonial .testimonial-author {
+    display: block;
+    font-size: .8em;
+    opacity: .8;
+}
+
+.testimonial .testimonial-role {
+    display: block;
+    font-size: .6em;
+    opacity: .6;
+    text-transform: uppercase;
+}

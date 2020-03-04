@@ -1,11 +1,6 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
+ * My ACF Blocks
  *
  * @link              https://markmarzeotti.com
  * @since             1.0.0
@@ -29,43 +24,33 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
+ * Current plugin version.
  */
 define( 'MY_ACF_BLOCKS_VERSION', '1.0.0' );
 
 /**
- * Check to make sure ACF Pro is active.
+ * Add plugin specific folder for acf-json.
+ *
+ * @param string $path The current path to acf-json.
  */
-function mab_check_dependencies() {
-	if ( ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
-		$class   = 'notice notice-error';
-		$message = __( 'This plugin "My ACF Blocks" relies on Advanced Custom Fields Pro. Please install and activate ACF Pro.', 'my-acf-blocks' );
+function mab_acf_json_save_point( $path ) {
 
-		printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
-	}
+	return plugin_dir_path( __FILE__ ) . 'acf-json';
+
 }
-add_action( 'admin_notices', 'mab_check_dependencies' );
+add_filter( 'acf/settings/save_json', 'mab_acf_json_save_point' );
 
 /**
- * Register our ACF Blocks.
+ * Some light housekeeping to make sure everything runs smoothly.
  */
-function mab_register_acf_block_types() {
-	acf_register_block_type(
-		array(
-			'name'            => 'testimonial',
-			'title'           => __( 'Testimonial' ),
-			'description'     => __( 'A custom testimonial block.' ),
-			'render_template' => 'template-parts/blocks/testimonial/testimonial.php',
-			'category'        => 'formatting',
-			'icon'            => 'admin-comments',
-			'keywords'        => array( 'testimonial', 'quote' ),
-		)
-	);
-}
+require plugin_dir_path( __FILE__ ) . 'inc/housekeeping.php';
 
-// Check if function exists and hook into setup.
-if ( function_exists( 'acf_register_block_type' ) ) {
-	add_action( 'acf/init', 'mab_register_acf_block_types' );
-}
+/**
+ * Functions restricting Gutenberg blocks and functionality.
+ */
+require plugin_dir_path( __FILE__ ) . 'inc/restrict-gutenberg.php';
+
+/**
+ * Testimonial Block.
+ */
+require plugin_dir_path( __FILE__ ) . 'blocks/blocks.php';
