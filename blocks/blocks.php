@@ -2,7 +2,7 @@
 /**
  * Individual Blocks
  *
- * Calls to individual blocks created with PHP and ACF..
+ * Calls to individual blocks created with PHP and ACF.
  *
  * @link              https://markmarzeotti.com
  * @since             1.0.0
