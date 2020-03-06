@@ -51,6 +51,11 @@ require plugin_dir_path( __FILE__ ) . 'inc/housekeeping.php';
 require plugin_dir_path( __FILE__ ) . 'inc/restrict-gutenberg.php';
 
 /**
+ * Functions extending Gutenberg blocks and functionality.
+ */
+require plugin_dir_path( __FILE__ ) . 'inc/extend-gutenberg.php';
+
+/**
  * Testimonial Block.
  */
 require plugin_dir_path( __FILE__ ) . 'blocks/blocks.php';
