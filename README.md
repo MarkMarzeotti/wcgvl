@@ -1,6 +1,6 @@
 # WordCamp Greenville 2020
 
-[Slides](https://markmarzeotti.com/gsgb)
+[Slides](https://markmarzeotti.com/gsgb) - [PDF](https://markmarzeotti.com/slides/gsgb/getting_started_with_gutenberg_blocks.pptx)
 
 ## Getting started with Gutenberg blocks
 
