@@ -62,8 +62,8 @@ add_filter( 'allowed_block_types', 'mab_additional_allowed_block_types', 100 );
 /**
  * Do not allow user to change font size.
  */
-function tuib_disable_font_sizes() {
+function mab_disable_font_sizes() {
     add_theme_support( 'disable-custom-font-sizes' );
     add_theme_support( 'editor-font-sizes', array() );
 }
-add_action( 'after_setup_theme', 'tuib_disable_font_sizes', 90, 0 );
+add_action( 'after_setup_theme', 'mab_disable_font_sizes', 90, 0 );
