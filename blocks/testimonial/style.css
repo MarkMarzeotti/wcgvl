@@ -2,27 +2,27 @@
     margin-bottom: 1em;
 }
 
-.testimonial .testimonial-by {
+.testimonial .testimonial__cite {
     display: flex;
     flex-flow: row nowrap;
 }
 
-.testimonial .testimonial-image {
+.testimonial .testimonial__profile {
     margin-right: 1em;
     width: 2em;
 }
 
-.testimonial .testimonial-image img {
+.testimonial .testimonial__profile img {
     border-radius: 1em;
 }
 
-.testimonial .testimonial-author {
+.testimonial .testimonial__name {
     display: block;
     font-size: .8em;
     opacity: .8;
 }
 
-.testimonial .testimonial-role {
+.testimonial .testimonial__role {
     display: block;
     font-size: .6em;
     opacity: .6;

@@ -65,16 +65,16 @@ function mab_testimonial_render_callback( $block, $content = '', $is_preview = f
 	$testimonial_image  = get_field( 'profile' ) ? wp_get_attachment_image_src( get_field( 'profile' ), 'profile' ) : plugin_dir_url( __FILE__ ) . 'blank-profile.png';
 	?>
 	<div id="<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $class_name ); ?>">
-		<blockquote class="testimonial-blockquote">
+		<blockquote class="testimonial__blockquote">
 			<p><?php echo esc_html( $testimonial_text ); ?></p>
 		</blockquote>
-		<div class="testimonial-by">
-			<div class="testimonial-image">
+		<div class="testimonial__cite">
+			<div class="testimonial__profile">
 				<img src="<?php echo esc_url( is_array( $testimonial_image ) ? $testimonial_image[0] : $testimonial_image ); ?>" alt="<?php echo esc_attr( $testimonial_author ); ?> profile" />
 			</div>
-			<div class="testimonial-cite">
-				<span class="testimonial-author"><?php echo esc_html( $testimonial_author ); ?></span>
-				<span class="testimonial-role"><?php echo esc_html( $testimonial_role ); ?></span>
+			<div class="testimonial__author">
+				<span class="testimonial__name"><?php echo esc_html( $testimonial_author ); ?></span>
+				<span class="testimonial__role"><?php echo esc_html( $testimonial_role ); ?></span>
 			</div>
 		</div>
 	</div>
