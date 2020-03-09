@@ -56,6 +56,6 @@ require plugin_dir_path( __FILE__ ) . 'inc/restrict-gutenberg.php';
 require plugin_dir_path( __FILE__ ) . 'inc/extend-gutenberg.php';
 
 /**
- * Testimonial Block.
+ * Include Blocks.
  */
 require plugin_dir_path( __FILE__ ) . 'blocks/blocks.php';
